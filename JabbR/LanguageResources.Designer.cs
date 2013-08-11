@@ -478,6 +478,24 @@ namespace JabbR {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to FTP Server.
+        /// </summary>
+        public static string Administration_FTPServer {
+            get {
+                return ResourceManager.GetString("Administration_FTPServer", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to FTP Server Location.
+        /// </summary>
+        public static string Administration_FTPServerLocation {
+            get {
+                return ResourceManager.GetString("Administration_FTPServerLocation", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to General Settings.
         /// </summary>
         public static string Administration_GeneralSettings {

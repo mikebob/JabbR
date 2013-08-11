@@ -32,14 +32,15 @@ namespace JabbR.UploadHandlers
 
             string fileNameSlug = fileName.ToFileNameSlug();
 
-            IUploadHandler handler = _fileUploadHandlers.FirstOrDefault(c => c.IsValid(fileNameSlug, contentType));
+            //IUploadHandler handler = _fileUploadHandlers.FirstOrDefault(c => c.IsValid(fileNameSlug, contentType));
+            IUploadHandler handler = _fileUploadHandlers.OfType<FTPStorageHandler>().FirstOrDefault(); // or .First()??
 
             if (handler == null)
             {
                 return null;
             }
 
-            return await handler.UploadFile(fileNameSlug, contentType, stream);
+            return await handler.UploadFile(fileName, contentType, stream);
         }
 
         private static IList<IUploadHandler> GetUploadHandlers(IKernel kernel)

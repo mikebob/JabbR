@@ -19,6 +19,8 @@ namespace JabbR.Services
 
         public string AzureblobStorageConnectionString { get; set; }
 
+        public string FTPServerLocation { get; set; }
+
         public int MaxFileUploadBytes { get; set; }
 
         public string GoogleAnalytics { get; set; }
